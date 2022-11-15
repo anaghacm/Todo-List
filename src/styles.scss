@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+*{
+    box-sizing: border-box;
+    overflow: auto;
+}
+.sp1{
+    // font-family: 'Gruppo', cursive;
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(0, 109, 119);
+}

@@ -1,0 +1,77 @@
+<div class="parent pt-5">
+    <div class="child1">
+        <img class="w-100 h-100" src="../../assets/images/todo.png" alt="">
+    </div>
+    <div class="child2">
+        <div>
+            <button class="listbutton btn px-4 py-2" (click)="getlist()" type="button">Get Complete List</button>
+        </div>
+        <div class="col-md-12 pt-4" style="font-family: 'Gruppo', cursive; color: rgb(1, 45, 49);">
+            <b>OR</b>
+        </div>
+        <form [formGroup]="searchForm">
+            <div id="searchbyid">
+                <span><input formControlName="id" type="number" name="id" id="getbyid" placeholder="Enter id"></span>
+                <span class="px-2"><button class="btn px-3 py-1" (click)="getbyId()" type="button">Get by
+                        ID</button></span>
+                <div class="mt-1" *ngIf="this.searchForm.get('id')?.errors&&this.searchForm.get('id')?.touched"
+                    style="color: red; font-size: 12px; text-align: left; margin-left: 75px;">Invalid ID</div>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="getid" class="text-center pb-5 mb-5" style="overflow-x: hidden;">
+    <!-- *ngIf='item' - To set the visibility of the data -->
+    <div class="my-4">
+        <span class="my-1" style="float:center; font-size: 26px; font-family: 'Gruppo', cursive; font-weight: bolder;">
+            <h2>TO DO List</h2>
+        </span>
+        <div class="form-check form-check-inline">
+            <input mdbRadio class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" checked="True"  (click)="getlist()"/>
+            <label class="form-check-label" for="inlineRadio1">All Tasks</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input mdbRadio class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                value="option2" (click)="filterc()" />
+            <label class="form-check-label" for="inlineRadio2">Completed</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input mdbRadio class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                value="option3"  (click)="filteric()"/>
+            <label class="form-check-label" for="inlineRadio3">Incomplete</label>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col p-2" *ngFor="let l of list">
+            <div class="card h-100 w-75 ms-5" [ngClass]="l.completed?'style1':'style2'">
+                <div class="card-body">
+                    <p class="card-text">User ID : {{l.userId}}</p>
+                    <p class="card-text">ID : {{l.id}}</p>
+                    <p class="card-text">Title : {{l.title}}</p>
+                    <p class="card-text">Completed : {{l.completed}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="byid" class="text-center pb-5" style="overflow-x: hidden;">
+    <!-- *ngIf='item' - To set the visibility of the data -->
+    <div class="row">
+        <h2>TO DO List</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col"></div>
+        <div class="col p-2">
+            <div class="card h-100 w-75 ms-5" [ngClass]="list.completed?'style1':'style2'">
+                <div class="card-body">
+                    <p class="card-title">User ID : {{list.userId}}</p>
+                    <p class="card-text">ID : {{list.id}}</p>
+                    <p class="card-text">Title : {{list.title}}</p>
+                    <p class="card-text">Completed : {{list.completed}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

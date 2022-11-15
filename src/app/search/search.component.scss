@@ -1,0 +1,95 @@
+.parent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.child1 {
+    width: 50%;
+}
+
+.child2 {
+    width: 30%;
+    text-align: center;
+}
+
+.listbutton {
+    margin: 150px 10px auto;
+    font-size: 15px;
+}
+
+h2 {
+    font-family: 'Gruppo', cursive;
+    font-weight: bolder;
+    color: rgb(1, 45, 49);
+    padding-bottom: 20px;
+}
+
+label {
+    font-family: 'Gruppo', cursive;
+    font-weight: bolder;
+}
+
+button {
+    font-family: 'Gruppo', cursive;
+    font-weight: bolder;
+    background-color: rgb(0, 109, 119);
+    color: rgb(237, 246, 249);
+    border: 1px solid rgb(0, 109, 119);
+}
+
+button:hover {
+    background-color: rgb(237, 246, 249);
+    color: rgb(0, 109, 119);
+}
+
+#searchbyid {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+input {
+    border: 1px solid rgb(0, 109, 119) !important;
+    font-family: 'Gruppo', cursive;
+    font-weight: bold;
+    width: 150px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Gruppo', cursive;
+}
+
+input:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+
+.style1 {
+    background-color: rgb(131, 197, 190);
+    color: rgb(1, 45, 49);
+    font-family: 'Gruppo', cursive;
+    font-weight: bolder;
+}
+
+.style2 {
+    background-color: rgb(226, 149, 120);
+    color: rgb(1, 45, 49);
+    font-family: 'Gruppo', cursive;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 850px) {
+    .parent {
+        display: block;
+    }
+
+    .child1 {
+        width: 100%;
+    }
+
+    .child2 {
+        width: 100%;
+    }
+}
