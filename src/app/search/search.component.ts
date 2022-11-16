@@ -20,8 +20,6 @@ export class SearchComponent implements OnInit {
   })
 
   constructor(private router: Router, private fb: FormBuilder, private ds: DataService) {
-    this.getid = '';
-    this.byid = ''
   }
 
 
@@ -31,12 +29,14 @@ export class SearchComponent implements OnInit {
   getbyId() {
     this.getid = '';
     this.byid = this.searchForm.value.id;
-    this.var = JSON.parse(localStorage.getItem('todo') || '')
-    for (let v of this.var) {
-      if (v.id == this.searchForm.value.id) {
-        this.list = v
-        console.log(this.list);
+    if (this.byid > 0 && this.byid <= 200) {
+      this.var = JSON.parse(localStorage.getItem('todo') || '')
+      for (let v of this.var) {
+        if (v.id == this.searchForm.value.id) {
+          this.list = v
+          console.log(this.list);
 
+        }
       }
     }
   }
@@ -46,7 +46,7 @@ export class SearchComponent implements OnInit {
     this.list = JSON.parse(localStorage.getItem('todo') || '')
   }
   filterc() {
-    this.list.length=0
+    this.list.length = 0
     this.var = JSON.parse(localStorage.getItem('todo') || '')
     for (let v of this.var) {
       if (v.completed == true) {
@@ -55,7 +55,7 @@ export class SearchComponent implements OnInit {
     }
   }
   filteric() {
-    this.list.length=0
+    this.list.length = 0
     this.var = JSON.parse(localStorage.getItem('todo') || '')
     for (let v of this.var) {
       if (v.completed == false) {
